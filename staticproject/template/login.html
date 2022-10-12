@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN</title>
+    <style>
+    body{background-color:rgb(242, 242, 242);}
+    form{text-align:center;border-style:hidden;width:400px;height:350px;background-color:White;
+    margin-top: 100px;margin-right:150px;margin-left:550px;border-radius:15px;}
+    h1{text-align:center;margin-bottom:50px;margin-right:50px;font-family:"Georgia",Serif;color:rgb(153, 0, 153);}
+     input[type=text],input[type=password]{font-color:OldLace;width:80%;height:10%;
+     border-radius:5px;border-style:hidden;background-color:LightGray;}
+     input[type=text]{margin-top:10px;margin-right:5px;}
+     h2{color:rgb(153, 0, 153);font-family:"Monaco",Monospace;font-size:100%;}
+    </style>
+</head>
+<body>
+<h1>LOGIN HERE</h1>
+<form method="post">
+    {% csrf_token %}
+    <img src="{% static 'D:\my projects\staticfolder\staticproject\static\images\login2.png' %}" alt=" " style="height:30%;"><br>
+    <h2>Have An Account?</h2>
+    <input type="text" name="username" placeholder="Username"><br><br>
+    <input type="password" name="password" placeholder="Password"><br><br>
+    <input type="submit" style="background-color:rgb(153, 0, 153);border-style:hidden;border-radius:5px;width:50%;
+    height:15%;color:White;">
+</form>
+{% for j in messages %}
+{{j}}
+{% endfor %}
+</body>
+</html>
